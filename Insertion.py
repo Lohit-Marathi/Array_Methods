@@ -9,7 +9,7 @@ for i in range(n):
     ele = int(input(f"Element {i+1}: "))
     arr.append(ele)
 
-index = int(input("Enter the index where you want to insert the element: "))
+index = int(input("Index: "))
 element = input("Enter the element to insert: ")
 
 print(insert_element(arr,index,element))
