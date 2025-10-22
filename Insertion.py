@@ -1,6 +1,6 @@
 def insert_element(arr,index,element):
     if index < 0 or index > len(arr):
-        reise IndexError("Index out of bounds")
+        raise IndexError("Index out of bounds")
     return arr[:index] + [element] + arr[index:]
 
 while True:
@@ -24,7 +24,7 @@ for i in range(n):
         except ValueError:
             print("Invalid input. Please enter an interger.")
 
-print(f"\nArray:",{arr})
+print(f"\nArray:,{arr}")
 
 while True:
     try:
@@ -44,4 +44,4 @@ while True:
         print("Invalid input. Please enter valid integer.")
 
 result = insert_element(arr,index,element)
-print(f"\nArray afrer insertion:",{result})
+print(f"\nArray afrer insertion:,{result}")
