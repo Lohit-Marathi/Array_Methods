@@ -1,6 +1,71 @@
-class Sort():
+class Sort:
+    def __init__(self):
+        self.array = []
 
-    def __init__():
+    def bubble_sort(self):
+        print("Performing bubble sort")
+        self.display_array()
+
+        n = len(self.array)
+        for i in range(n):
+            swapped = False
+            for j in range(0,n-i-1):
+                if self.array[j] > self.array[j+1]:
+                    self.array[j],self.array[j+1] = self.array[j+1],self.array[j]
+                    swapped = True
+            if not swapped:
+                break
+        
+        print("\nArray is sorted in acending order")
+        self.display_array()
+                    
+
+
+    def selection_sort(self):
+        print("Performing selection sort\n")
+        self.display_array()
+
+        n = len(self.array)
+        for i in range(n):
+            min_ind  = i
+            for j in range(i+1,n):
+                if self.array[j] < self.array[min_ind]:
+                    min_ind = j
+            self.array[i],self.array[min_ind] = self.array[min_ind],self.array[i]
+        
+        print("Array is sorted in acending order.")
+        self.display_array()
+
+    def display_array(self):
+        """Display the current array."""
+        if self.array:
+            print("Current Array:", self.array)
+        else:
+            print("\nArray is empty.")
+            
+    def is_empty(self):
+        """Check if the array is empty."""
+        return len(self.array) == 0
+    
+    def get_integer_input(self, prompt, min_val=None, max_val=None):
+        """Get a validated integer input from the user."""
+        while True:
+            try:
+                value = int(input(prompt))
+                if (min_val is not None and value < min_val):
+                    print(f"value must be at least {min_val}.")
+                    continue
+                if (max_val is not None and value > max_val):
+                    print(f"value must be at most {max_val}.")
+                    continue
+                return value
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+
+    def create_array(self):
+        """Create an array based on user input."""
+        size = self.get_integer_input("Enter the size of the array: ",min_val=1)
+
         self.array = []
 
         for i in range(size):
